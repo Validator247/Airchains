@@ -98,7 +98,7 @@ create service
     EOF
 
     sudo systemctl daemon-reload
-    sudo systemctl enable sided
+    sudo systemctl enable junctiond
 
 Launch Node
 
