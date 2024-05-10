@@ -81,6 +81,10 @@ Run the open configuration command
 
     persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"
 
+Set Mini Gas
+
+	sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.00025amf"|g' $HOME/.junction//config/app.toml
+ 
 create service
 
     sudo tee /etc/systemd/system/junctiond.service > /dev/null << EOF
