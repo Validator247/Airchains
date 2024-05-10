@@ -94,11 +94,13 @@ create service
     sudo systemctl daemon-reload
     sudo systemctl enable sided
 
-    		
-    		
+Launch Node
+
+
+    sudo systemctl restart junctiond && journalctl -u junctiond -f -o cat		
 	
 
-Creat Wallet  ( Faucet token at the project discord channel)
+# Creat Wallet  ( Faucet token at the project discord channel)
 
     junctiond keys add wallet
 
@@ -107,7 +109,7 @@ To obtain the pubkey:
     junctiond comet show-validator
 
 
-Creat file Validator.json
+# Creat file Validator.json  ( nano validator.json )
 
         {
 	"pubkey": <validator-pub-key>,
