@@ -71,7 +71,13 @@ Replace the Existing Genesis File
 
     cp genesis.json ~/.junction/config/genesis.json
 
-Update Configuration 9 Edit ~/.junction/config/config.toml to set persistent_peers)
+Update Configuration: 
+
+Run the open configuration command
+
+	nano ~/.junction/config/config.toml 	
+
+ Replace peer
 
     persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"
 
