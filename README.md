@@ -133,7 +133,7 @@ To obtain the pubkey:
 
 Finally, create the validator:
 
-    junctiond tx staking create-validator path/to/validator.json --from <key-name> --chain-id junction --fees 500amf
+    junctiond tx staking create-validator path/to/validator.json --from wallet --chain-id junction --fees 500amf
 
         
 # Done !                
