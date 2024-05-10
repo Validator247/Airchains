@@ -73,7 +73,30 @@ Replace the Existing Genesis File
 
 Update Configuration 9 Edit ~/.junction/config/config.toml to set persistent_peers)
 
-    persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"    		
+    persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"
+
+create service
+
+    sudo tee /etc/systemd/system/junctiond.service > /dev/null << EOF
+    [Unit]
+    Description=airchains node service
+    After=network-online.target
+    [Service]
+    User=$USER
+    ExecStart=/usr/local/bin/junctiond start
+    Restart=on-failure
+    RestartSec=10
+    LimitNOFILE=65535
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable sided
+
+    		
+    		
+	
 
 Creat Wallet  ( Faucet token at the project discord channel)
 
@@ -83,21 +106,6 @@ To obtain the pubkey:
 
     junctiond comet show-validator
 
-The output will be something like this:
-
-        {
-	"pubkey": <validator-pub-key>,
-	"amount": "1000000amf",
-	"moniker": "<validator-name>",
-	"identity": "optional identity signature (ex. UPort or Keybase)",
-	"website": "validator's (optional) website",
-	"security": "validator's (optional) security contact email",
-	"details": "validator's (optional) details",
-	"commission-rate": "0.1",
-	"commission-max-rate": "0.2",
-	"commission-max-change-rate": "0.01",
-	"min-self-delegation": "1"
-    }
 
 Creat file Validator.json
 
