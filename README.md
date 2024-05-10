@@ -73,7 +73,7 @@ Replace the Existing Genesis File
 
 Update Configuration 9 Edit ~/.junction/config/config.toml to set persistent_peers)
 
-    persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"
+    persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"    		
 
 Creat Wallet  ( Faucet token at the project discord channel)
 
@@ -120,6 +120,4 @@ Finally, create the validator:
     junctiond tx staking create-validator path/to/validator.json --from <key-name> --chain-id junction --fees 500amf
 
         
-            
-
-# Next (optional) set up systemD and launch. Create a wallet, get the public key file, create a validator.json file and set up the validator like other cosmos chains. Good luck        
+# Done !                
