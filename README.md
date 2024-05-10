@@ -75,4 +75,51 @@ Update Configuration 9 Edit ~/.junction/config/config.toml to set persistent_pee
 
     persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"
 
+Creat Wallet  ( Faucet token at the project discord channel)
+
+    junctiond keys add wallet
+
+To obtain the pubkey:
+
+    junctiond comet show-validator
+
+The output will be something like this:
+
+        {
+	"pubkey": <validator-pub-key>,
+	"amount": "1000000amf",
+	"moniker": "<validator-name>",
+	"identity": "optional identity signature (ex. UPort or Keybase)",
+	"website": "validator's (optional) website",
+	"security": "validator's (optional) security contact email",
+	"details": "validator's (optional) details",
+	"commission-rate": "0.1",
+	"commission-max-rate": "0.2",
+	"commission-max-change-rate": "0.01",
+	"min-self-delegation": "1"
+    }
+
+Creat file Validator.json
+
+        {
+	"pubkey": <validator-pub-key>,
+	"amount": "1000000amf",
+	"moniker": "<validator-name>",
+	"identity": "optional identity signature (ex. UPort or Keybase)",
+	"website": "validator's (optional) website",
+	"security": "validator's (optional) security contact email",
+	"details": "validator's (optional) details",
+	"commission-rate": "0.1",
+	"commission-max-rate": "0.2",
+	"commission-max-change-rate": "0.01",
+	"min-self-delegation": "1"
+    }
+
+Finally, create the validator:
+
+    junctiond tx staking create-validator path/to/validator.json --from <key-name> --chain-id junction --fees 500amf
+
+        
+            
+
 # Next (optional) set up systemD and launch. Create a wallet, get the public key file, create a validator.json file and set up the validator like other cosmos chains. Good luck        
