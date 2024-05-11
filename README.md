@@ -79,7 +79,7 @@ Run the open configuration command
 
  Replace peer
 
-    persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656"
+    persistent_peers = "de2e7251667dee5de5eed98e54a58749fadd23d8@34.22.237.85:26656,aaf73849a5edb61ad5690d97c9e111520994c378@159.69.216.77:26656,84b6ccf69680c9459b3b78ca4ba80313fa9b315a@159.69.208.30:26656"
 
 Set Mini Gas
 
